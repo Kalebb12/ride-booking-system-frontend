@@ -1,4 +1,4 @@
-import { getRides } from "../_services/apiRides";
+import { getRides } from "../app/_services/apiRides";
 import RideCard from "./RideCard";
 
 const Rides = async () => {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {Josefin_Sans} from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -22,13 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en" className="dark">
       <body
         className={`${josefin.className} antialiased min-h-screen`}
       >
         {children}
       </body>
-      
+
     </html>
+    </ClerkProvider>
   );
 }

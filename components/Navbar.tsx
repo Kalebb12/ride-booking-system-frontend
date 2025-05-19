@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -8,8 +9,15 @@ const Navbar = () => {
       </Link>
 
       <nav className="flex gap-[26px]">
+        <SignedIn>
+
         <Link href="/bookings " className="hover:underline">My Bookings</Link>
         <Link href="/profile " className="hover:underline">Profile</Link>
+        </SignedIn>
+
+        <SignedOut>
+          <Link href="/login " className="hover:underline">Login</Link>
+        </SignedOut>
       </nav>
     </div>
   );
